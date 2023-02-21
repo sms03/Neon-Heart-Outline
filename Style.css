@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  body,
+  main,
+  div {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+  }
+  
+  body {
+    background: radial-gradient(
+      circle at 55% 55%,
+      hsl(0, 100%, 50%),
+      hsl(30, 100%, 50%),
+      hsl(60, 100%, 50%),
+      hsl(140, 100%, 50%),
+      hsl(190, 100%, 50%),
+      hsl(260, 100%, 50%),
+      hsl(330, 100%, 50%)40%
+    );
+  }
+  
+  svg {
+    width: 100vmin;
+    height: 100vmin;
+    margin: auto;
+  }
+  
+  main {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  div {
+    background: #000;
+    mix-blend-mode: multiply;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at 55% 55%,
+      hsl(0, 100%, 50%),
+      hsl(30, 100%, 50%),
+      hsl(60, 100%, 50%),
+      hsl(140, 100%, 50%),
+      hsl(190, 100%, 50%),
+      hsl(260, 100%, 50%),
+      hsl(330, 100%, 50%)40%
+    );
+    animation: subtle 9000ms infinite linear;
+  }
+  
+  path {
+    stroke-width: 1px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 300px;
+    animation: dash 10000ms -10000ms infinite alternate ease-in-out,
+               w 7200ms -7200ms infinite alternate ease-in-out;
+  }
+  
+  @keyframes dash {
+    100% {
+      stroke-dashoffset: -298px;
+    }
+  }
+  
+  @keyframes w {
+    100% {
+      stroke-width: 12px;
+    }
+  }
+  
+  @keyframes subtle {
+    100%{
+      transform: rotate(1turn);
+    }
+  }
